@@ -16,6 +16,7 @@ object TOC {
 
     val chapter04 = Variance
     val chapter05 = Bounds
+    val chapter06 = Quantification
 
   }
 
