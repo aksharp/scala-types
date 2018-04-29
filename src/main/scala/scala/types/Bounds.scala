@@ -8,7 +8,8 @@ object Bounds {
   // Bounds
   // A <: B   means A is a subtype of B
   // A >: B   means A is a supertype of B
-  // A : B    means A is B (requires implicit evidence to support this claim)
+  // A : B    means there is an implementation of B for A (requires implicit evidence to support this claim)
+  // A =:= B  means A must be equal to B
 
   // reuse our class hierarchy
   class Animal { val sound = "rustle" }
@@ -29,10 +30,12 @@ object Bounds {
   val flock = List(new Bird, new Bird)
   // res: flock: List[Bird] = List(Bird@7e1ec70e, Bird@169ea8d2)
 
+  // A <: B example
   // List defines an operator ::(elem T) that returns a new List with elem prepended.
   new Chicken :: flock
   // res: List[Bird] = List(Chicken@56fbda05, Bird@7e1ec70e, Bird@169ea8d2)
 
+  // A >: B example
   // List[+T] is covariant; a list of Birds is a list of Animals.
   //  List prepend operator :: is defined ::[B >: T](x: B) which returns a List[B].
   //    Notice the B >: T. That specifies type B as a superclass of T.
@@ -42,10 +45,24 @@ object Bounds {
   //  Note that the return type is List[Animal]
 
 
+  // A : B example
   def lesser[A : Ordering](a: A, b: A)(implicit ev: Ordering[A]) =
     if ( ev.lt(a, b) )
       a
     else
       b
+
+
+  // A =:= B example
+  // define A where A is Int
+  class Container[A](value: A) {
+    def addIt(implicit evidence: A =:= Int) = 123 + value
+  }
+
+  (new Container(123)).addIt
+  // res11: Int = 246
+
+  (new Container("123")).addIt
+  // error: could not find implicit value for parameter evidence: =:=[java.lang.String,Int]
 
 }
