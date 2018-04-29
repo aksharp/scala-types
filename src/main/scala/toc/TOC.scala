@@ -24,6 +24,7 @@ object TOC {
 
   trait Part4 {
     StructuralTypes
+    AbstractTypeMembers
   }
 
   trait Part5 {
