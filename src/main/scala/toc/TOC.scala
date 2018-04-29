@@ -25,6 +25,7 @@ object TOC {
   trait Part4 {
     StructuralTypes
     AbstractTypeMembers
+    ManifestAndTypeErasure
   }
 
   trait Part5 {
