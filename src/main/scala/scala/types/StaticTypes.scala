@@ -33,7 +33,7 @@ Note that all type information is removed at compile time. It is no longer neede
 
   val question = "What are static types? Why are they useful?"
 
-//  val answer: Int = "Because this will be caught at compile time!"
+  val answer: Int = "Because this will be caught at compile time!"
 
 
 }

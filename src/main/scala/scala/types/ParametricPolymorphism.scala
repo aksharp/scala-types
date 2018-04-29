@@ -24,7 +24,7 @@ object ParametricPolymorphism {
   //    that are “too generic” for the compiler to understand. Suppose you had some function
   def toList[A](a: A) = List(a)
   // which you wished to use generically:
-//  def foo[A, B](f: A => List[A], b: B) = f(b)
+  def foo[A, B](f: A => List[A], b: B) = f(b)
   // this works
   def foo[A](f: A => List[A], a: A) = f(a)
 
@@ -32,7 +32,7 @@ object ParametricPolymorphism {
   //  because all type variables have to be fixed at the invocation site.
   //    Even if you “nail down” type B,
   // You get a type mismatch
-//  def foo[A](f: A => List[A], i: Int) = f(i)
+  def foo[A](f: A => List[A], i: Int) = f(i)
 
 
 
