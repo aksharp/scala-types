@@ -22,4 +22,8 @@ object TOC {
     Kinds
   }
 
+  trait Part4 {
+    FBoundedPolymorphism
+  }
+
 }
