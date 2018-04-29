@@ -18,6 +18,7 @@ object TOC {
 
   trait Part3 {
     HigherKindedTypes
+    AdHocPolymorphism
     Kinds
   }
 
