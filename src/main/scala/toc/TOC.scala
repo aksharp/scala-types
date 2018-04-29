@@ -15,6 +15,7 @@ object TOC {
   trait Intermediate {
 
     val chapter04 = Variance
+    val chapter05 = Bounds
 
   }
 
