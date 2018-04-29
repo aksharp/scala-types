@@ -23,7 +23,13 @@ object TOC {
   }
 
   trait Part4 {
+    StructuralTypes
+  }
+
+  trait Part5 {
     FBoundedPolymorphism
+    //TypeClasses
+
   }
 
 }
